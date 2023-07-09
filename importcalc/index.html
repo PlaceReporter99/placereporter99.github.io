@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+<code>import module</code> or <code>from module import*</code>?
+</title>
+<script>
+function calculate() {
+let mname = document.getElementById("modulename").value
+let num = document.getElementById("number").valueAsNumber
+let result = ( (mname.length + 1) * num) - 6
+if (result > 0) {
+document.getElementById("answer").innerHTML="<code>from " + mname + " import*</code> is shorter."
+}
+else if (result < 0) {
+document.getElementById("answer").innerHTML="<code>import " + mname + "</code> is shorter."
+}
+else {
+document.getElementById("answer").innerHTML="It doesn't matter which one you use."
+}
+return false;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return calculate();">
+<fieldset>
+<legend>How should I import the module?</legend>
+<label for="modulename">Module name: </label>
+</br>
+</br>
+<input type="text" id="modulename" name="modulename"/>
+</br>
+</br>
+<label for="number">Number of times module is used: </label>
+</br>
+</br>
+<input type="number" id="number" name="number"/>
+</br>
+</br>
+<input type="submit" value="Calculate"/>
+</br>
+</br>
+<fieldset>
+<legend>Answer</legend>
+</br>
+<div id="answer">
+</div>
+</fieldset>
+</br>
+</fieldset>
+</form>
+</body>
+</html>
