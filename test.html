@@ -8,5 +8,5 @@ async function fetchAsync (url) {
   let data = await response.json();
   return data;
 }
-elem.innerHTML = fetchAsync("https://placereporter99.github.io")
+elem.innerHTML = await fetchAsync("https://placereporter99.github.io")
 </script>
