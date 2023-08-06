@@ -1,0 +1,6 @@
+<p id="user"></p>
+<script>
+let params = new URLSearchParams(location.search);
+let user = params.get('user')
+document.getElementById("user").innerHTML = user
+</script>
