@@ -1,6 +1,12 @@
-<p id="user"></p>
+<div id="user"></div>
 <script>
 let params = new URLSearchParams(location.search);
-let user = params.get('user')
-document.getElementById("user").innerHTML = user
+let user = params.get('user');
+let elem = document.getElementById('user')
+async function fetchAsync (url) {
+  let response = await fetch(url);
+  let data = await response.json();
+  return data;
+}
+elem.innerHTML = fetchAsync("https://placereporter99.github.io")
 </script>
